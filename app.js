@@ -18,7 +18,7 @@ const app = express();
 app.use(express.urlencoded({ extended: true}))
 
 
-
+const TEST = "TESTVALUE"
 async function start() {
     try {
         // Connect to MongoDB
