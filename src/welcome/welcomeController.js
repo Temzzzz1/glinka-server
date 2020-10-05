@@ -3,7 +3,7 @@ const ig = require('instagram-scraping')
 
 module.exports.showInstagramPosts = (req, res) => {
 
-    ig.scrapeUserPage('aee.glinka').then(result => {
+    ig.scrapeUserPage('rusanov.tema').then(result => {
 
         res.json(result)
         // postsURL = []
