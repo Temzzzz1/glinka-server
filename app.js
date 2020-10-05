@@ -3,22 +3,28 @@ require('dotenv').config()
 const express  = require('express')
 const mongoose = require('mongoose')
 const path = require('path')
+const cookieParser = require('cookie-parser')
+
 
 const PORT = process.env.PORT || 3000
+
+const app = express();
+
+app.use(express.json())
+app.use(express.urlencoded({ extended: false}))
+app.use(cookieParser())
 
 // Routes
 const adminRoute = require('./src/admin/adminRoute')
 const postRoute = require('./src/posts/postRoute')
+const welcomeRoute = require('./src/welcome/welcomeRoute')
 
+app.use(welcomeRoute)
 app.use(adminRoute)
 app.use(postRoute)
 
-const app = express();
-
-app.use(express.urlencoded({ extended: true}))
 
 
-const TEST = "TESTVALUE"
 async function start() {
     try {
         // Connect to MongoDB

@@ -1,14 +1,8 @@
-require('dotenv').config()
 
 const { Router } = require('express');
 const router = Router();
+const adminController = require('./adminController')
 
-router.get('/glinkapanel', async (req, res) => {
-    
-})
-
-router.post('/glinkapanel', async (req, res) => {
-    
-})
+router.post('/login', adminController.loginToPanel)
 
 module.exports = router;
