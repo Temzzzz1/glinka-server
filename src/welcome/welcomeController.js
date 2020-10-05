@@ -1,9 +1,9 @@
 
 const ig = require('instagram-scraping')
 
-module.exports.showInstagramPosts = (req, res) => {
+module.exports.showInstagramPosts = async (req, res) => {
 
-    ig.scrapeTag('veranda').then(result => {
+    await ig.scrapeTag('veranda').then(result => {
         res.json(result);
       });
 
