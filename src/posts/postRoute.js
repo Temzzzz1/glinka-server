@@ -1,5 +1,4 @@
 
-
 const { Router } = require('express');
 const { post } = require('../admin/adminRoute');
 const router = Router();
