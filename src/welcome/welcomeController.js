@@ -1,21 +1,17 @@
 
 const ig = require('instagram-scraping')
 
-module.exports.showInstagramPosts = async (req, res) => {
+module.exports.showInstagramPosts = (req, res) => {
 
-    await ig.scrapeTag('veranda').then(result => {
-        res.json(result);
+    ig.scrapeUserPage('rusanov.tema').then(result => {
+        console.log(result)
+        postsURL = []
+        for (let index = 0; index < 5; index++) {
+            postsURL.push(result.medias[index]['thumbnail'])
+        }
+        res.json(result)
+
       });
-
-    // ig.scrapeUserPage('rusanov.tema').then(result => {
-
-    //     res.json(result)
-    //     // postsURL = []
-    //     // for (let index = 0; index < 5; index++) {
-    //     //     postsURL.push(result.medias[index]['thumbnail'])
-    //     // }
-        
-    //   });
 
    
 }
