@@ -6,7 +6,7 @@ const welcomeController = require('./welcomeController')
 router.get('/', welcomeController.showInstagramPosts)
 
 router.get('/text', (req, res) => {
-    res.sendFile("hello world")
+    res.send("hello world")
 })
 
 module.exports = router;
