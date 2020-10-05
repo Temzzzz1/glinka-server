@@ -4,6 +4,7 @@ const express  = require('express')
 const mongoose = require('mongoose')
 const path = require('path')
 const cookieParser = require('cookie-parser')
+const cors = require('cors')
 
 
 const PORT = process.env.PORT || 6080
@@ -13,12 +14,9 @@ const app = express();
 app.use(express.json())
 app.use(express.urlencoded({ extended: false}))
 app.use(cookieParser())
+app.use(cors())
 
-app.use(function(req, res, next) {
-  res.header("Access-Control-Allow-Origin", "http://localhost:6080");
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-  next();
-});
+
 
 // Routes
 const adminRoute = require('./src/admin/adminRoute')
