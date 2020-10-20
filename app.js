@@ -22,10 +22,14 @@ app.use(cors())
 const adminRoute = require('./src/admin/adminRoute')
 const postRoute = require('./src/posts/postRoute')
 const welcomeRoute = require('./src/welcome/welcomeRoute')
+const contactRoute = require('./src/contact/ContactRoute')
+
 
 app.use(welcomeRoute)
 app.use(adminRoute)
 app.use(postRoute)
+app.use(contactRoute)
+
 
 
 
