@@ -14,7 +14,6 @@ module.exports.showPosts = async (req, res) => {
 
 
 module.exports.addPost = async (req, res) => {
-
     if (req.files.image) {
         cloudinary.uploader.upload(req.files.image.path, {
             'folder': 'glinka/portfolio',
@@ -27,6 +26,4 @@ module.exports.addPost = async (req, res) => {
             else res.json({isSent: true, result});
         });
     }
-    
-
 }
