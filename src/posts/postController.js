@@ -6,6 +6,7 @@ cloudinary.config({
     api_secret: process.env.CLOUD_API_SECRET
 });
 
+
 module.exports.addPost = async (req, res) => {
     if (req.files.image) {
         cloudinary.uploader.upload(req.files.image.path, {
