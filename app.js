@@ -22,6 +22,7 @@ const postRoute = require('./src/posts/postRoute')
 const welcomeRoute = require('./src/welcome/welcomeRoute')
 const contactRoute = require('./src/contact/ContactRoute')
 
+// Use Routes
 app.use(welcomeRoute)
 app.use(adminRoute)
 app.use(postRoute)
