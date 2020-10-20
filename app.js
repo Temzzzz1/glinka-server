@@ -13,7 +13,7 @@ const app = express();
 app.use(express.urlencoded({ extended: true}))
 app.use(express.json())
 app.use(cookieParser())
-app.use(cors())
+app.options('*', cors())
 app.use(formData.parse());
 
 // Routes
