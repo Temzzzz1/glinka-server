@@ -7,12 +7,6 @@ cloudinary.config({
     api_secret: process.env.CLOUD_API_SECRET
 });
 
-module.exports.showPosts = async (req, res) => {
-    res.json(await Posts.find({}).lean())
-}
-
-
-
 module.exports.addPost = async (req, res) => {
     if (req.files.image) {
         cloudinary.uploader.upload(req.files.image.path, {
